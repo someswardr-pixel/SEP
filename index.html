@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SEP - Student Exam Preparation</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#f4f7ff;color:#172554}
+header{background:#173b80;color:white;padding:22px 7%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.logo{font-size:27px;font-weight:bold}
+.logo span{color:#facc15}
+nav a{color:white;text-decoration:none;margin:0 10px;font-size:14px}
+button{cursor:pointer;border:0;border-radius:9px;padding:11px 16px;font-weight:bold}
+.hero{padding:65px 7%;background:linear-gradient(120deg,#173b80,#3877d9);color:white}
+.hero h1{font-size:42px;margin:0 0 15px}
+.hero p{font-size:18px;line-height:1.6}
+.primary{background:#facc15;color:#172554;margin-top:12px}
+section{padding:35px 7%}
+h2{color:#173b80}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:18px}
+.card{background:white;padding:24px;border-radius:15px;box-shadow:0 4px 15px #17255412}
+.card .emoji{font-size:34px}
+.card h3{margin-bottom:8px}
+.card p{color:#64748b;line-height:1.5}
+.card a{color:#2563eb;text-decoration:none;font-weight:bold}
+.upload{background:#e5edff;border:2px dashed #6388d5;text-align:center;border-radius:15px;padding:35px}
+footer{background:#102b5d;color:white;text-align:center;padding:25px}
+#language{background:white;color:#173b80}
+@media(max-width:650px){
+header{padding:18px 5%}
+nav{line-height:2.5}
+.hero h1{font-size:32px}
+section,.hero{padding:35px 5%}
+}
+</style>
+</head>
+<body>
+
+<header>
+ <div class="logo">SEP <span>📚</span></div>
+ <nav>
+  <a href="#home" data-en="Home" data-ta="முகப்பு">Home</a>
+  <a href="#notes" data-en="Notes" data-ta="குறிப்புகள்">Notes</a>
+  <a href="#papers" data-en="Papers" data-ta="வினாத்தாள்கள்">Papers</a>
+  <a href="#upload" data-en="Upload" data-ta="பதிவேற்றம்">Upload</a>
+ </nav>
+ <button id="language" onclick="toggleLanguage()">தமிழ்</button>
+</header>
+
+<div class="hero" id="home">
+ <h1 data-en="Welcome to SEP!" data-ta="SEP இணையதளத்திற்கு வரவேற்கிறோம்!">Welcome to SEP!</h1>
+ <p data-en="Student Exam Preparation – Your one-stop destination for study notes, previous-year question papers and learning materials."
+ data-ta="மாணவர் தேர்வு தயாரிப்பு – படிப்புக் குறிப்புகள், முந்தைய ஆண்டு வினாத்தாள்கள் மற்றும் கல்விப் பொருட்களுக்கான ஒரே தளம்.">
+ Student Exam Preparation – Your one-stop destination for study notes, previous-year question papers and learning materials.
+ </p>
+ <a href="#notes"><button class="primary" data-en="Explore Materials" data-ta="படிப்புப் பொருட்களைப் பார்க்க">Explore Materials</button></a>
+</div>
+
+<section id="notes">
+<h2 data-en="📘 Study Notes" data-ta="📘 படிப்புக் குறிப்புகள்">📘 Study Notes</h2>
+<div class="cards">
+ <div class="card"><div class="emoji">📗</div><h3>Engineering Notes</h3><p>Subject-wise engineering study materials.</p></div>
+ <div class="card"><div class="emoji">📐</div><h3>Mathematics</h3><p>Mathematics notes and learning resources.</p></div>
+ <div class="card"><div class="emoji">💻</div><h3>Computer Science</h3><p>Programming and computer science materials.</p></div>
+</div>
+</section>
+
+<section id="papers">
+<h2 data-en="📝 Previous Year Question Papers" data-ta="📝 முந்தைய ஆண்டு வினாத்தாள்கள்">📝 Previous Year Question Papers</h2>
+<div class="cards">
+ <div class="card"><div class="emoji">📄</div><h3>Semester Exams</h3><p>Previous semester examination papers.</p></div>
+ <div class="card"><div class="emoji">📚</div><h3>Model Papers</h3><p>Practice with model examination papers.</p></div>
+ <div class="card"><div class="emoji">🎓</div><h3>University Exams</h3><p>University examination preparation materials.</p></div>
+</div>
+</section>
+
+<section id="upload">
+<h2 data-en="☁️ Share Your Study Materials" data-ta="☁️ உங்கள் படிப்புப் பொருட்களைப் பகிரவும்">☁️ Share Your Study Materials</h2>
+<div class="upload">
+ <h3 data-en="Upload Notes & Question Papers" data-ta="குறிப்புகள் மற்றும் வினாத்தாள்களைப் பதிவேற்றவும்">Upload Notes & Question Papers</h3>
+ <p data-en="The secure student upload system will be connected in the next development step."
+ data-ta="பாதுகாப்பான மாணவர் பதிவேற்ற வசதி அடுத்த கட்டத்தில் இணைக்கப்படும்.">The secure student upload system will be connected in the next development step.</p>
+ <p>📂 PDF · DOCX · PPT · JPG</p>
+</div>
+</section>
+
+<footer>
+ <h3>SEP – Student Exam Preparation</h3>
+ <p data-en="Learn • Share • Prepare • Succeed" data-ta="கற்க • பகிர • தயாராக • வெற்றி பெற">Learn • Share • Prepare • Succeed</p>
+ <p>© 2026 SEP. All rights reserved.</p>
+</footer>
+
+<script>
+let tamil=false;
+function toggleLanguage(){
+ tamil=!tamil;
+ document.querySelectorAll("[data-en]").forEach(el=>{
+  el.textContent=tamil?el.dataset.ta:el.dataset.en;
+ });
+ document.getElementById("language").textContent=tamil?"English":"தமிழ்";
+ document.documentElement.lang=tamil?"ta":"en";
+}
+</script>
+</body>
+</html>
